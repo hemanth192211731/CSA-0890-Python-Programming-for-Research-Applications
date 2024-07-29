@@ -1,0 +1,50 @@
+def solveNQueens(n):
+    def isSafe(row, col):
+        return not (cols[col] or hills[row - col] or dales[row + col])
+
+    def placeQueen(row, col):
+        queens.add((row, col))
+        cols[col] = 1
+        hills[row - col] = 1
+        dales[row + col] = 1
+
+    def removeQueen(row, col):
+        queens.remove((row, col))
+        cols[col] = 0
+        hills[row - col] = 0
+        dales[row + col] = 0
+
+    def addSolution():
+        solution = []
+        for _, col in sorted(queens):
+            row = ['.'] * n
+            row[col] = 'Q'
+            solution.append(''.join(row))
+        solutions.append(solution)
+
+    def backtrack(row=0):
+        for col in range(n):
+            if isSafe(row, col):
+                placeQueen(row, col)
+                if row + 1 == n:
+                    addSolution()
+                else:
+                    backtrack(row + 1)
+                removeQueen(row, col)
+
+    solutions = []
+    queens = set()
+    cols = [0] * n
+    hills = [0] * (2 * n - 1)
+    dales = [0] * (2 * n - 1)
+    backtrack()
+    return solutions
+
+# User input
+n = int(input("Enter the value of n: "))
+n_queens_solutions = solveNQueens(n)
+print("All distinct solutions to the N-Queens puzzle:")
+for solution in n_queens_solutions:
+    for row in solution:
+        print(row)
+    print()
