@@ -1,0 +1,18 @@
+def is_valid_brackets(s):
+    stack = []
+    bracket_map = {')': '(', '}': '{', ']': '['}
+    
+    for char in s:
+        if char in bracket_map:
+            top_element = stack.pop() if stack else '#'
+            if bracket_map[char] != top_element:
+                return False
+        else:
+            stack.append(char)
+    
+    return not stack
+
+# Examples
+print(is_valid_brackets("()"))      # Output: True
+print(is_valid_brackets("()[]{}"))  # Output: True
+print(is_valid_brackets("(]"))      # Output: False
