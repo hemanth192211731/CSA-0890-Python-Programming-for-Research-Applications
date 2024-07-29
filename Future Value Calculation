@@ -1,0 +1,10 @@
+def future_value(principal, rate, years):
+    return principal * ((1 + (rate / 100)) ** years)
+
+# Test Data
+amt = 10000
+int_rate = 3.5
+years = 7
+
+# Output
+print(f"Future Value: {future_value(amt, int_rate, years):.2f}")
