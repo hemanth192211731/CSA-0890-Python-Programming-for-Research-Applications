@@ -1,0 +1,11 @@
+def is_happy_number(n):
+    seen = set()
+    while n != 1 and n not in seen:
+        seen.add(n)
+        n = sum(int(digit) ** 2 for digit in str(n))
+    return n == 1
+
+# Sample Input
+number = 19
+# Sample Output
+print(f"Given number is happy number: {is_happy_number(number)}")
