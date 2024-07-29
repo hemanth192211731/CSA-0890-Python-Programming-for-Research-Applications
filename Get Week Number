@@ -1,0 +1,10 @@
+import datetime
+
+def get_week_number(date_str):
+    date_obj = datetime.datetime.strptime(date_str, "%Y %m %d")
+    return date_obj.isocalendar()[1]
+
+# Sample Date
+date_str = "2015 6 16"
+# Expected Output
+print(f"Week number: {get_week_number(date_str)}")
