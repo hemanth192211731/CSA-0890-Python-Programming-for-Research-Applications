@@ -1,0 +1,5 @@
+def count_occurrences(numbers, target):
+    return numbers.count(target)
+numbers = (3, 6, 8, 9, 8, 9, 1, 2, 3, 5, 8)
+target = 8
+print(count_occurrences(numbers, target))
