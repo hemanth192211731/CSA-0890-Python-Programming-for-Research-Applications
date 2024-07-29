@@ -1,0 +1,13 @@
+def print_numbers_excluding(P, Q, R):
+    result = []
+    for i in range(P, Q + 1):
+        if str(R) not in str(i):
+            result.append(i)
+    return result
+
+# Sample Input
+P = 60
+Q = 70
+R = 3
+# Sample Output
+print("Numbers are =", print_numbers_excluding(P, Q, R))
