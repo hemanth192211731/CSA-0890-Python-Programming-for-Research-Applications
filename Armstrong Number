@@ -1,0 +1,10 @@
+def is_armstrong_number(n):
+    num_str = str(n)
+    power = len(num_str)
+    sum_of_powers = sum(int(digit) ** power for digit in num_str)
+    return sum_of_powers == n
+
+# Sample Input
+number = 153
+# Sample Output
+print(f"Given number is Armstrong number: {is_armstrong_number(number)}")
