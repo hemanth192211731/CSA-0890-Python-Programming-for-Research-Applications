@@ -1,0 +1,9 @@
+def nth_largest(lst, n):
+    sorted_lst = sorted(lst, reverse=True)
+    return sorted_lst[n-1] if 0 < n <= len(sorted_lst) else None
+
+# Sample Input
+lst = [14, 67, 48, 23, 5, 62]
+n = 4
+# Sample Output
+print(f"{n}th Largest number: {nth_largest(lst, n)}")
