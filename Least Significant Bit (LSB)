@@ -1,0 +1,4 @@
+# Least Significant Bit (LSB)
+number = 18
+lsb = number & 1
+print("Least Significant Bit (LSB):", lsb)
