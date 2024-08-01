@@ -1,0 +1,7 @@
+# Find Substring
+string = "hello world"
+substring = "world"
+if substring in string:
+    print(f"'{substring}' found in '{string}'")
+else:
+    print(f"'{substring}' not found in '{string}'")
