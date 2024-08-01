@@ -1,0 +1,6 @@
+# Composite Number
+def is_composite(n):
+    return n > 1 and not is_prime(n)
+
+number = 4
+print(f"{number} is a composite number:", is_composite(number))
