@@ -1,0 +1,5 @@
+# Reverse String
+string = "hello"
+reversed_string = string[::-1]
+
+print("Reversed string:", reversed_string)
