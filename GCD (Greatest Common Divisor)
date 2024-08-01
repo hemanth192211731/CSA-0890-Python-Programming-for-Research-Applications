@@ -1,0 +1,7 @@
+# GCD (Greatest Common Divisor)
+import math
+
+a = 54
+b = 24
+gcd = math.gcd(a, b)
+print("GCD:", gcd)
